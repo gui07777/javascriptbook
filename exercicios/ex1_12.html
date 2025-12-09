@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+    /*
+    entrada: ler valor total de uma conta e quantos clientes vão pagar
+    processamento: calcular valor a ser pago por cliente
+    saída: exibir valor a ser pago por cliente
+    */
+
+    var conta = Number(prompt("Informe o valor total da conta"));
+    var cliente = Number(prompt("Informe o total de clientes que irá pagar"));
+
+    var divisao = conta / cliente;
+
+    alert("Cada cliente deverá pagar " + divisao.toFixed(2) + " reais.")
+</script>

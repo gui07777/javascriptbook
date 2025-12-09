@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+    /*
+    entrada: ler valor de jantar
+    processamento: calcular 10% a mais do valor do jantar
+    saída: informar taxa do garçom e valor total a ser pago
+    */
+
+    var valorJantar = Number(prompt("Informe qual foi o valor do seu jantar"));
+    var taxaGarcom = valorJantar * (10 / 100);
+    var total = taxaGarcom + valorJantar;
+    alert("O valor da taxa do garçom é " + taxaGarcom.toFixed(2) + " reais" + ", e o valor do total do jantar incluindo a taxa do garçom é de " + total.toFixed(2) + " reais")
+
+    //toFixed(2) vai definir que a variável deve conter duas casas decimais
+</script>

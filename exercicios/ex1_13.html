@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script>
+    /*
+    1) ler preço de um produto
+    2) informar opções de pagamento da loja 
+    3) calcular 10% de desconto para pagamento a vista
+    4) calcular valor em 3 vezes
+    5) informar os valores do valor a vista e do parcelado em 3 vezes
+    */
+
+    var preco = Number(prompt("Informe o preço do produto"));
+    var desconto = preco * (10/100)
+
+    alert(
+        "Opções de pagamento \n" + "À vista: " + (preco - desconto) + " reais \n" + "Ou 3x de: " + (preco/3) + " reais"
+    )
+</script>
