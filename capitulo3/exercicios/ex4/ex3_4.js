@@ -12,7 +12,18 @@ saída: informar hora na frança
 function calcTime() {
     var brazilClock = document.getElementById('inClock').value;
     var brazilClockToNumber = Number(brazilClock);
-    var francaClock = brazilClockToNumber + 5.00; 
+
+    if (brazilClockToNumber.value == "" || isNaN(brazilClockToNumber)) {
+        alert('Informe a hora no Brasil corretamente')
+        brazilClockToNumber.focus();
+        return;
+    }
+
+    var francaClock = brazilClockToNumber + 5;
+    if (francaClock > 24) {
+        francaClock = francaClock - 24;
+    }
+    
     document.getElementById('outResponse').textContent = 'Hora na França: ' + francaClock.toFixed(2);
 }
 
