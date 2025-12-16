@@ -5,7 +5,7 @@ function calcWeight() {
     var height = Number(inHeight);
     var outResponse = document.getElementById('outResponse');
     if (radioSex === 'M') {
-        let calc = 22 * (height ** 2);
+        let calc = 22 * (height ** 2); //da pra usar math.pow(height, 2) base elevado a expoente
         outResponse.textContent = inName + ': Seu peso ideal é ' + calc.toFixed(3) + ' kg';
     } else if (radioSex === 'F') {
         let calc = 21 * (height ** 2);
@@ -18,6 +18,11 @@ function clean() {
     document.getElementById('inHeight').value = '';
     document.getElementById('inName').value = '';
     document.querySelector('#option').checked = false;
+    /*
+        inves de atribuir valor vazio a todos os campos pode-se utilizar também
+        a função location.reload() para recarregar a página e retorná-la ao
+        seu primeiro estado
+    */
 }
 
 document.getElementById('btnCalc').addEventListener('click', calcWeight);
