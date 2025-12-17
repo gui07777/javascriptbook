@@ -21,11 +21,14 @@ function calcNotes() {
         return;
     }
 
+    var resto;
+
     var notas100 = value / 100; //470 / 100 = 4 e sobra 70
-    var resto = notas100 % 100; //70
+    resto = notas100 % 100; //70
     var notas50 = resto / 50; // 70 / 50 = 1 sobra 20
     resto = notas50 % 50;
     var notas10 = value / 10;
+    resto = notas10 % 10;
 
     if (value % 10 == 0) {
         document.getElementById('outResponse').textContent = 'A raíz quadrada de ' + number + ' é ' + squareRoot;
