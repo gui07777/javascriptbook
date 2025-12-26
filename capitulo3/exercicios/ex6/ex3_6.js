@@ -15,7 +15,7 @@ function calcNotes() {
     var inValue = document.getElementById('inValue').value;
     var value = Number(inValue);
 
-    if (inValue == "" || isNaN(value)) {
+    if (inValue == "" || isNaN(value) || value % 10 != 0) {
         alert('Falha no processo. Tente novamente!')
         inValue.focus();
         return;
