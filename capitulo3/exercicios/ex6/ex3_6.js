@@ -16,26 +16,39 @@ function calcNotes() {
     var value = Number(inValue);
 
     if (inValue == "" || isNaN(value)) {
-        alert('Informe um valor de verdade')
+        alert('Falha no processo. Tente novamente!')
         inValue.focus();
         return;
     }
 
+    var quantidadeNotas100 = 0;
+    var quantidadeNotas50 = 0;
+    var quantidadeNotas10 = 0;
+
     var resto;
 
-    var notas100 = value / 100; //470 / 100 = 4 e sobra 70
-    resto = notas100 % 100; //70
-    var notas50 = resto / 50; // 70 / 50 = 1 sobra 20
-    resto = notas50 % 50;
-    var notas10 = value / 10;
-    resto = notas10 % 10;
+    var notas100 = value / 100;
+    resto = notas100 % 100;
 
-    if (value % 10 == 0) {
-        document.getElementById('outResponse').textContent = 'A raíz quadrada de ' + number + ' é ' + squareRoot;
-    } else {
-        document.getElementById('outResponse').textContent = 'Não há raiz exata para ' + number;
+    if (resto === 0) {
+        quantidadeNotas100++;
+        document.getElementById('outResponse1').textContent = 'Notas de R$ 100: ' + quantidadeNotas100;
+        var notas50 = resto / 50;
+        resto = notas50 % 50;
+        if (resto === 0) {
+            quantidadeNotas50++;
+            document.getElementById('outResponse2').textContent = 'Notas de R$ 50: ' + quantidadeNotas50;
+            var notas10 = resto / 10;
+            resto = notas10 % 10;
+            if (resto === 0) {
+                quantidadeNotas10++;
+                document.getElementById('outResponse3').textContent = 'Notas de R$ 10: ' + quantidadeNotas10++;
+            }
+        }
     }
 
 }
 
 document.getElementById('btnShow').addEventListener('click', calcNotes)
+
+//incompleto
