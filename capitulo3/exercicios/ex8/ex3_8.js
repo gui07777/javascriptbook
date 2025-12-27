@@ -13,16 +13,15 @@ function calcularMulta() {
     var inVelocidadeCondutor = document.getElementById('inVelocidadeCondutor').value;
     var velocidadeCondutor = Number(inVelocidadeCondutor);
     var outResposta = document.getElementById('outResposta');
+    var calculoPercentual = velocidadePermitida * (20 / 100);
 
-    if (velocidadeCondutor <= (velocidadePermitida * (20 / 100))) {
-        outResposta.textContent = 'Sem multa'
-    } else if (velocidadeCondutor > (velocidadePermitida * (20 / 100))) {
+    if (velocidadeCondutor <= velocidadePermitida) {
+        outResposta.textContent = 'Sem multa';
+    } else if (velocidadeCondutor > (calculoPercentual + velocidadePermitida)) {
         outResposta.textContent = 'Multa grave';
-    } else {
+    } else if (velocidadeCondutor > velocidadePermitida || velocidadeCondutor === (calculoPercentual + velocidadePermitida)) {
         outResposta.textContent = 'Multa leve';
     }
 }
 
 document.getElementById('btnVerify').addEventListener('click', calcularMulta);
-
-//incompleto, pag 106
