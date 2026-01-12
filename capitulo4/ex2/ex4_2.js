@@ -1,30 +1,11 @@
-class Desc {
-
-    constructor() {
-        this.inNumero = document.getElementById('inNumero').value;
-        this.numero = Number(this.inNumero);
-        this.outResposta = document.getElementById('outResposta');
-        this.resultado = 0;
+function processar() {
+    var inNumero = document.getElementById('inNumero').value;
+    var numero = Number(inNumero);
+    var outResposta = document.getElementById('outResposta');
+    outResposta.textContent = `Entre ${numero} e 1: `;
+    for (let i = numero; i > 0; i--) {
+        outResposta.textContent += `${i}, `;
     }
-
-    processar() {
-        for (let i = this.numero; i > 1; i--) {
-            this.resultado = this.numero - ;
-        }
-    }
-
-    exibir() {
-        this.outResposta.textContent = this.resultado;
-    }
-
-    executar() {
-        this.processar();
-        this.exibir();
-    }
-
 }
 
-function executar() {
-    var desc = new Desc();
-    desc.executar();
-}
+document.getElementById('btnProcessar').addEventListener('click', processar)
