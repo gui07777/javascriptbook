@@ -14,11 +14,10 @@ function processar() {
         return;
     }
 
-    resposta += `${descricao} - R$: ${valor.toFixed(2)} \n ------------------------------- \n`
+    resposta = `${descricao} - R$: ${valor.toFixed(2)} \n`;
     numContas++;
-    valTotal += valor;
-    resposta += `${numContas} Conta(s) - Total: ${valTotal}`
-    outTotal.textContent = resposta;
+    outListaContas.textContent += resposta;
+    outTotal.textContent = `${numContas} Conta(s) - Total: ${valTotal += valor}`;
 }
 
 document.getElementById('btRegistrar').addEventListener('click', processar)
