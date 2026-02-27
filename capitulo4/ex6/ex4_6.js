@@ -4,10 +4,8 @@ function preencher() {
     var outSaida = document.getElementById('outSaida');
     var simbolo = '*';
 
-    for (let i = 0; i < quantidade;) {
-        quantidade++;
+    for (let i = 0; i < quantidade; i++) {
         outSaida.textContent += simbolo;
-        break;
     }
 }
 
