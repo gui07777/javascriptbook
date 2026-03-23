@@ -3,16 +3,14 @@ function criar() {
     var outSaida = document.getElementById('outSaida');
     var simbolo = '*';
 
-    for (let i = 0; i < quantidadeLinhas; i++) {
-        outSaida.innerHTML += `${simbolo}<br>`
+    for (let i = 0; i < quantidadeLinhas;) {
+        i++;
+        outSaida.innerHTML += '<br>'
+        for (let x = 0; x < i; x++) {
+            outSaida.innerHTML += `${simbolo}`
+        }
     }
 
 }
 
 document.getElementById('btnCriar').addEventListener('click', criar)
-
-/*
-cada vez que o laço rodar (cada i) é uma linha
-então roda primeira linha o inner gera um simbolo
-roda a segunda, o inner gera 2
-*/
