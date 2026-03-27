@@ -6,9 +6,13 @@ function adicionar() {
     pacientes.push(paciente);
     var lista = '';
     for (let i = 0; i < pacientes.length; i++) {
-        lista += `${i + 1}. ${pacientes[i]} \n`;
+        lista += `${i + 1}. ${pacientes[i]}`;
     }
     outLista.textContent = lista;
 }
 
 document.querySelector('.btnAdicionar').addEventListener('click', adicionar)
+
+function atender() {
+    
+}
